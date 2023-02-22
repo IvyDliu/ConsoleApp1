@@ -1,0 +1,46 @@
+Understanding Data Types
+1.
+    phone number - string
+    height - float
+    age - int
+    gender - char
+    salary - decimal
+    ISBN - string
+    price - decimal
+    shipping weight - double
+    population - long
+    stars - long
+    employees - int
+2.
+    Value types store data directly, while reference types store a reference to the data.
+    Unboxing means to convert a reference type to a value type, boxing means the opposite
+3.
+    Managed resources are memories that Garbage Collector is responsible to clean up, unmanaged resources are memories that are not.
+4.
+    Clean up memories that no other object is pointing at.
+    
+Controlling Flow and Converting Types
+1.  System.DivideByZeroException
+2.  the variable is now infinity
+3.  the variable is now negative
+4.  x=y first then y = y+1; y = y+1 first then x = y
+5.  break: exit loop; continue: next iteration; return: exit function
+6.   initialize, test, and update. only test is required
+7.  = assign, == comparison
+8. yes
+9. means default
+10. IEnumerable
+
+Arrays and Strings
+1.
+    when need to update string frequently, use StringBuilder; otherwise, use string
+2.
+    Array
+3.
+    Array.Sort()
+4.
+    Length
+5.
+    No. But it can store the derived data types
+6.
+    Copyto( ) copies the source array to desitination array. Clone() copies the array and returns the new object.
