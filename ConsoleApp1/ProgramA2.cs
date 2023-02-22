@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace ConsoleApp1;
 
@@ -265,28 +266,111 @@ public class PracticeStrings
             '\\',
             '/',
             '!',
-            '?',
-            ' '
+            '?'
         };
-        string[] tokens = readInput.Split(separator);
+        string[] tokens = readInput.Split(' ');
         Console.WriteLine(string.Join(",", tokens));
         List<int> pos = new List<int>();
         List<char> sym = new List<char>();
-        int index = 0;
+        int count = 1;
         for (int i = 0; i < tokens.Length; i++)
         {
-            if (tokens[i] == "")
+            for (int j = 0; j < tokens[i].Length; j++)
             {
-                Console.WriteLine(i + " " + readInput[index]);
-                pos.Add(i);
-                sym.Add(readInput[index]);
-                index++;
-            }
-            else
-            {
-                index += tokens[i].Length + 1;
-                Console.WriteLine(i + " " + index);
+                // Console.Write(tokens[i][j] + " ");
+                if (separator.Contains(tokens[i][j]))
+                {
+                    pos.Add(i+count++);
+                    sym.Add(tokens[i][j]);
+                    // Console.WriteLine(i + "-[" + tokens[i][j] + "]");
+                    tokens[i] = tokens[i].Remove(j,1);
+                    
+                }
+                
             }
         }
+
+        List<string> sentence = tokens.ToList();
+        sentence.Reverse();
+        for (int i = 0; i < pos.Count; i++)
+        {
+            sentence.Insert(pos[i], sym[i].ToString());
+        }
+
+        foreach (var word  in sentence)
+        {
+            Console.Write(word + " ");
+        }
+    }
+
+    public bool isPalindromes(string word)
+    {
+        int length = word.Length;
+        if (length == 1)
+            return true;
+        for (int j = 0; j < length / 2; j++)
+        {
+            // Console.Write(word[j] + " ");
+            if (word[j] != word[length - 1 - j])
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public void FindPalindromes()
+    {
+        Console.WriteLine("Enter a sentence:");
+        string input = Console.ReadLine();
+        string[] tokens = Regex.Matches(input, "\\w+")
+            .Cast<Match>().Select(x => x.Value).ToArray();
+        SortedSet<string> palins = new SortedSet<string>();
+        for (int i = 0; i < tokens.Length; i++)
+        {
+            if (isPalindromes(tokens[i]))
+            {
+                palins.Add(tokens[i]);
+            }
+                
+            
+        }
+
+        Console.WriteLine(string.Join(", ", palins));
+    }
+
+    public void ParseURL()
+    {
+        Console.WriteLine("Enter an url:");
+        string input = Console.ReadLine();
+        string protocol = "";
+        string server = "";
+        string resource = "";
+        string[] split1 = input.Split("://");
+        
+        Console.WriteLine();
+        string[] split2;
+        if (split1.Length == 2)
+        {
+            split2 = split1[1].Split("/",2);
+            protocol = split1[0];
+        }
+        else
+        {
+            split2 = input.Split("/", 2);
+        }
+
+        if (split2.Length == 2)
+        {
+            server = split2[0];
+            resource = split2[1];
+        }
+        else
+        {
+            server = split2[0];
+        }
+        
+        Console.WriteLine($"[Protocol] = \"{protocol}\" \n [Server] = \"{server}\" \n [Resource] = \"{resource}\"");
     }
 }

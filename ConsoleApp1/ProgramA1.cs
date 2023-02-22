@@ -200,8 +200,11 @@ public class Test
         // practiceArrays.FindMostFrequency();
         PracticeStrings practiceStrings = new PracticeStrings();
         // practiceStrings.ReverseString();
-        practiceStrings.SplitAndReverse();
+        // practiceStrings.SplitAndReverse();
+        // practiceStrings.FindPalindromes();
+        practiceStrings.ParseURL();
     }
+    
     
     
     
