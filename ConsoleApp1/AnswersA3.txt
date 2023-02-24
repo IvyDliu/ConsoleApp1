@@ -1,0 +1,54 @@
+1. 
+    private - can only access inside the same class
+    public - can access anywhere
+    protected - can access from class and derived class 
+    internal - can access from the same assembly
+    protected internal - can access from the same assembly and derived class from other assemblies
+    private protected - can access from the class and the derived class from the same assembly
+2.  
+    static members are initiated with the class and can be changed, but const and readonly members are not. const member's value is fixed at the compile time, while readonly member's is fixed at run-time.
+3.
+    Constructors are used to create instance of the class
+4.
+    Partial split class definition in multiple files, allow multiple programmers to work on the same project;
+    have great extensibility and flexibility
+5.
+    Tuple groups multiple data elements together
+6.
+    record keyword is to define a reference type that provides built-in functionality for encapsulating data
+7.
+    Overriding: Methods in base class and its subclasses share the same method name and same input parameters
+    Overloading: Methods in same class share the same method name, but different input parameters
+8.
+    fields are inner members of the class, properties expose fields to the user of the class
+9.
+    can use overloading to write another method without the parameter.
+10.
+    interface provides higher level of abstraction, no implementation of the methods allowed
+    abstract class allows both abstract and concrete methods
+11.
+    public abstract
+12.
+    T
+13.
+    T
+14.
+    F
+15.
+    F
+16.
+    T
+17.
+    T
+18.
+    T
+19.
+    F
+20.
+    F
+21.
+    T
+22.
+    F
+23.
+    T
