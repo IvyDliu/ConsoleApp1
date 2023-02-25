@@ -1,0 +1,21 @@
+1.
+    Generics allow us to design class or method but defer the specification of types util the class or method is declared and called.
+    It also provides type safety.
+2.  
+    List<string> list = new List<string>();
+3.
+    two
+4.
+    F
+5.
+    Add
+6.
+    RemoveRange, RemoveAll
+7.
+    put <T> after class declaration
+8.
+    F
+9.
+    T
+10.
+    T
